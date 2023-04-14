@@ -44,4 +44,8 @@
 		</fields>
 	</config>
 
+	<updateservers>
+		<server type="module" priority="1" name="Stupid Simple Socials Module">https://raw.githubusercontent.com/kevinsguides/stupid_simple_socials/main/mod_sss_updateserver.xml</server>
+	 </updateservers>
+
 </extension>
