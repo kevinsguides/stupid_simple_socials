@@ -15,11 +15,32 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
 
 $document = Factory::getDocument();
+
+
+$app = Factory::getApplication();
+$doc = $app->getDocument();
+$wa = $doc->getWebAssetManager();
+$mod_directory = Uri::base() . 'modules/mod_stupidsimplesocials/';
+
 if ($params->get('showpn')==1){
-  $document->addScript('//assets.pinterest.com/js/pinit.js');
+  $wa->registerAndUseScript('pinterest', 'https://assets.pinterest.com/js/pinit.js', [], ['defer' => true]);
 }
 
+$iconloader = $params->get('iconloader','fontawesome');
 
+//setup icons
+if ($iconloader == 'fontawesomecdn'){
+  $wa->registerAndUseStyle('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', [], ['defer' => true]);
+};
+if($iconloader == 'fontawesomecdn' || $iconloader == 'fontawesome'){
+  $icon_linkedin = '<i class="fab fa-linkedin"></i>';
+};
+if($iconloader == 'svg'){
+  $icon_linkedin = '<img src="'.$mod_directory.'img/linkedin.svg" style="width: 18px;" alt="LinkedIn" />';
+}
+if($iconloader == 'text'){
+  $icon_linkedin = 'LinkedIn';
+}
 
 ?>
 
@@ -49,7 +70,7 @@ Tweet</a></span>
 <span><a id="linkedin-share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo JUri::getInstance(); ?>"
   target="popup" 
   onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=<?php echo JUri::getInstance(); ?>','popup','width=600,height=600'); return false;">
-  <i class="fab fa-linkedin"></i> Share
+  <?php echo $icon_linkedin;?> Share
 </a></span>
 <?php endif; ?>
 </div>
