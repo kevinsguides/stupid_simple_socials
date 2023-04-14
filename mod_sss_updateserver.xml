@@ -1,0 +1,22 @@
+<updates>
+    <update>
+        <name>Stupid Simple Socials Module</name>
+        <element>mod_stupidsimplesocials</element>
+        <type>module</type>
+        <version>1.0.0</version>
+        <client>site</client>
+        <infourl title="On Github...">https://github.com/kevinsguides/stupid_simple_socials</infourl>
+        <downloads>
+        <downloadurl type="upgrade" format="zip">github.com/comingsoon.zip</downloadurl>
+        </downloads>
+        <tags>
+        <tag>stable</tag>
+        </tags>
+        <php_minimum>7.4</php_minimum>
+        <maintainer>Kevins Guides</maintainer>
+        <maintainerurl>https://kevinsguides.com</maintainerurl>
+        <infourl>https://kevinsguides.com</infourl>
+        <targetplatform name="joomla" version="4"/>
+        <changelogurl>https://github.com/kevinsguides/stupid_simple_socials/commits/main</changelogurl>
+        </update>
+</updates>
